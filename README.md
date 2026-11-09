@@ -1,4 +1,4 @@
-## 4. Análise dos Resultados
+##  Análise dos Resultados
 
 ### 🟢 Execução dos Testes
 - **Todos os testes foram executados com sucesso?**  
@@ -30,7 +30,7 @@
 
 ---
 
-## 5. Conclusão
+##  Conclusão
 
 A implementação dos testes automatizados utilizando o **Playwright** no projeto *Aula Personalização do Mário* demonstrou a eficiência e a robustez da ferramenta no contexto de garantia de qualidade de software (QA). 
 
