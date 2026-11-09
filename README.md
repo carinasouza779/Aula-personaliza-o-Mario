@@ -28,7 +28,7 @@
   - **Testes Multinavegador e Paralelismo:** Executar centenas de testes simultaneamente em diferentes navegadores e resoluções no ambiente de homologação, reduzindo drasticamente o tempo total de homologação manual.
   - **Monitoramento Sintético (Smoke Testing):** Agendar execuções periódicas em ambiente de staging/produção para verificar se os fluxos críticos da aplicação continuam operacionais.
 
-## 3. Código-Fonte dos Testes Desenvolvidos
+## Código-Fonte dos Testes Desenvolvidos
 
 Abaixo encontra-se a suíte completa de testes automatizados desenvolvida em **Playwright** (`tests/mario.spec.js`), cobrindo os cenários de carregamento, navegação, verificação de elementos gráficos, interação e validações gerais.
 
