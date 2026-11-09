@@ -1,5 +1,5 @@
-Análise dos Resultados
-Todos os testes foram executados com sucesso?
+<h1>Análise dos Resultados
+Todos os testes foram executados com sucesso<\h1>
 
 Sim. Todos os 6 casos de teste automatizados criados na suíte do Playwright foram executados e aprovados com 100% de taxa de sucesso (passed). O Playwright validou com êxito o carregamento da aplicação, a renderização dos elementos gráficos e a interatividade dos componentes sem apresentar falhas de execução.
 
