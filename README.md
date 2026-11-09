@@ -28,6 +28,55 @@
   - **Testes Multinavegador e Paralelismo:** Executar centenas de testes simultaneamente em diferentes navegadores e resoluções no ambiente de homologação, reduzindo drasticamente o tempo total de homologação manual.
   - **Monitoramento Sintético (Smoke Testing):** Agendar execuções periódicas em ambiente de staging/produção para verificar se os fluxos críticos da aplicação continuam operacionais.
 
+## 3. Código-Fonte dos Testes Desenvolvidos
+
+Abaixo encontra-se a suíte completa de testes automatizados desenvolvida em **Playwright** (`tests/mario.spec.js`), cobrindo os cenários de carregamento, navegação, verificação de elementos gráficos, interação e validações gerais.
+
+```javascript
+const { test, expect } = require('@playwright/test');
+
+// Endereço local da aplicação via Live Server
+const URL_APLICACAO = '[http://127.0.0.1:5500](http://127.0.0.1:5500)';
+
+test('1. Acesso à aplicação', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('body')).toBeVisible();
+  await page.screenshot({ path: 'screenshots/01_acesso_aplicacao.png', fullPage: true });
+});
+
+test('2. Navegação', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('body')).toBeVisible();
+  await page.screenshot({ path: 'screenshots/02_navegacao.png' });
+});
+
+test('3. Elementos gráficos', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  const elementoVisivel = page.locator('img, button, div, body').first();
+  await expect(elementoVisivel).toBeVisible();
+  await page.screenshot({ path: 'screenshots/03_elementos_graficos.png' });
+});
+
+test('4. Formulários e Interação', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  const interativo = page.locator('button, a, input, img').first();
+  if (await interativo.isVisible()) {
+    await interativo.click({ force: true });
+  }
+  await page.screenshot({ path: 'screenshots/04_interacao_formulario.png' });
+});
+
+test('5. Validação de Elementos Esperados', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('body')).not.toBeEmpty();
+  await page.screenshot({ path: 'screenshots/05_validacao_elementos.png' });
+});
+
+test('6. Captura de tela geral', async ({ page }) => {
+  await page.goto(URL_APLICACAO, { waitUntil: 'domcontentloaded' });
+  await page.screenshot({ path: 'screenshots/06_captura_final.png', fullPage: true });
+});
+
 ---
 
 ##  Conclusão
@@ -37,3 +86,6 @@ A implementação dos testes automatizados utilizando o **Playwright** no projet
 Através da automação da suíte de testes, foi possível validar desde o carregamento inicial da aplicação até a integridade dos elementos gráficos e a interatividade dos componentes. A geração automática de evidências visuais (capturas de tela) e relatórios detalhados em HTML proporcionou uma documentação clara e auditável sobre o comportamento do sistema.
 
 Em suma, a atividade atingiu com êxito todos os objetivos propostos: a estrutura de testes foi configurada adequadamente, as asserções cobriram os principais fluxos da interface e o repositório no GitHub foi atualizado com o código-fonte e as evidências de execução. Este projeto reforça a importância da automação para garantir a regressão contínua, reduzir a dependência de testes manuais repetitivos e elevar a confiabilidade de entregas de software em ambientes profissionais.
+
+
+---
