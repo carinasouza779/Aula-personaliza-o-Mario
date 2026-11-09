@@ -27,3 +27,13 @@
   - **Geração Automática de Evidências:** Utilizar o sistema de relatórios HTML, screenshots e gravação de vídeos nativos do Playwright para documentar a qualidade de cada *release* para a equipa de QA e gestão.
   - **Testes Multinavegador e Paralelismo:** Executar centenas de testes simultaneamente em diferentes navegadores e resoluções no ambiente de homologação, reduzindo drasticamente o tempo total de homologação manual.
   - **Monitoramento Sintético (Smoke Testing):** Agendar execuções periódicas em ambiente de staging/produção para verificar se os fluxos críticos da aplicação continuam operacionais.
+
+---
+
+## 5. Conclusão
+
+A implementação dos testes automatizados utilizando o **Playwright** no projeto *Aula Personalização do Mário* demonstrou a eficiência e a robustez da ferramenta no contexto de garantia de qualidade de software (QA). 
+
+Através da automação da suíte de testes, foi possível validar desde o carregamento inicial da aplicação até a integridade dos elementos gráficos e a interatividade dos componentes. A geração automática de evidências visuais (capturas de tela) e relatórios detalhados em HTML proporcionou uma documentação clara e auditável sobre o comportamento do sistema.
+
+Em suma, a atividade atingiu com êxito todos os objetivos propostos: a estrutura de testes foi configurada adequadamente, as asserções cobriram os principais fluxos da interface e o repositório no GitHub foi atualizado com o código-fonte e as evidências de execução. Este projeto reforça a importância da automação para garantir a regressão contínua, reduzir a dependência de testes manuais repetitivos e elevar a confiabilidade de entregas de software em ambientes profissionais.
